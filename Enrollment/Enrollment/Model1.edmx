@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="empdatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_emp">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="emp_name" Type="varchar" MaxLength="200" />
+          <Property Name="emp_age" Type="varchar" MaxLength="200" />
+          <Property Name="emp_cell" Type="varchar" MaxLength="200" />
+          <Property Name="emp_desig" Type="varchar" MaxLength="200" />
+          <Property Name="emp_salary" Type="varchar" MaxLength="200" />
+          <Property Name="emp_finger" Type="varbinary(max)" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="empdatabaseModelStoreContainer">
+          <EntitySet Name="tbl_emp" EntityType="Self.tbl_emp" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="empdatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_emp">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="emp_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="emp_age" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="emp_cell" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="emp_desig" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="emp_salary" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="emp_finger" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="empdatabaseEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_emp" EntityType="Self.tbl_emp" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="empdatabaseModelStoreContainer" CdmEntityContainer="empdatabaseEntities1">
+          <EntitySetMapping Name="tbl_emp">
+            <EntityTypeMapping TypeName="empdatabaseModel.tbl_emp">
+              <MappingFragment StoreEntitySet="tbl_emp">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="emp_name" ColumnName="emp_name" />
+                <ScalarProperty Name="emp_age" ColumnName="emp_age" />
+                <ScalarProperty Name="emp_cell" ColumnName="emp_cell" />
+                <ScalarProperty Name="emp_desig" ColumnName="emp_desig" />
+                <ScalarProperty Name="emp_salary" ColumnName="emp_salary" />
+                <ScalarProperty Name="emp_finger" ColumnName="emp_finger" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
